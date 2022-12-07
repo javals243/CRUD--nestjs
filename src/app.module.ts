@@ -11,7 +11,7 @@ import { AppService } from './app.service';
       port: 3306,
       username: 'root',
       password: 'valere24',
-      database: 'crud-nestjs',
+      database: 'crud_nestjs',
       entities: [],
       synchronize: true,
     }),
