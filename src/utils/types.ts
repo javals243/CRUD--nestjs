@@ -12,3 +12,7 @@ export type CreateUserProfileParams = {
   lastName: string;
   age: number;
 };
+export type CreatePostParam = {
+  title: string;
+  description: string;
+};
