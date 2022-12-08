@@ -16,7 +16,7 @@ export class UsersService {
     @InjectRepository(Profile) private profileRepository: Repository<Profile>,
   ) {}
   findUsers() {
-    return this.userRepository.find();
+    return this.userRepository.find({ relations: ['profile'] });
   }
   createUser(userDetails: CreateUserParams) {
     const newUser = this.userRepository.create({
