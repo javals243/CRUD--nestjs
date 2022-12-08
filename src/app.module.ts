@@ -15,7 +15,7 @@ import { UsersModule } from './users/users.module';
       username: 'root',
       password: 'valere24',
       database: 'crud_nestjs',
-      entities: [User, Profile],
+      entities: [Profile, User],
       synchronize: true,
     }),
     UsersModule,

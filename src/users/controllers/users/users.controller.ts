@@ -9,6 +9,7 @@ import {
   Put,
 } from '@nestjs/common';
 import { CreateUserDto } from 'src/users/dtos/CreateUser.dto';
+import { UserProfileDto } from 'src/users/dtos/CreateUserProfile.dto';
 import { UsersService } from 'src/users/services/users/users.service';
 import { UpdateUserDto } from '../../dtos/UpdateUser.dto';
 
@@ -33,5 +34,12 @@ export class UsersController {
   @Delete(':id')
   async deleteUserById(@Param('id', ParseIntPipe) id: number) {
     await this.userService.deleteUser(id);
+  }
+  @Post(':id/profile')
+  createUserProfile(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() CreateUserProfileDto: UserProfileDto,
+  ) {
+    return this.userService.createProfile(id, CreateUserProfileDto);
   }
 }
